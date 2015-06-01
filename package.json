@@ -1,0 +1,22 @@
+{
+  "name": "mqttchat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "build": "./node_modules/.bin/browserify -t babelify main.js -o output.js",
+    "watch": "./node_modules/.bin/watchify -d -t babelify main.js -o output.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^5.4.7",
+    "babelify": "^6.1.2",
+    "browserify": "^10.2.3"
+  },
+  "dependencies": {
+    "mqtt": "^1.2.0",
+    "react": "^0.13.3",
+    "watchify": "^3.2.1"
+  }
+}
