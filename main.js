@@ -29,7 +29,11 @@ var MessageList = React.createClass({
         var self = this;
 
         client.on('message', function(topic, payload, packet) {
-            self.addMessage({key: packet.messageId, topic: topic, payload: payload.toString()});
+            self.addMessage({
+                key: Date.now(),
+                topic: topic,
+                payload: payload.toString()
+            });
         });
     },
 
