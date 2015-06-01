@@ -68,10 +68,21 @@ var SendMessage = React.createClass({
     }
 });
 
-React.render(
-    <MessageList />, document.getElementById('messages')
-);
+var App = React.createClass({
+    render: function() {
+        return (
+            <div>
+                <div>
+                    <SendMessage />
+                </div>
+                <div>
+                    <MessageList />
+                </div>
+            </div>
+        );
+    }
+});
 
 React.render(
-    <SendMessage />, document.getElementById('sendMessageBox')
+    <App />, document.getElementById('content')
 );
