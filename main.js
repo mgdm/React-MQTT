@@ -17,7 +17,7 @@ var Message = React.createClass({
 var MessageList = React.createClass({
     addMessage: function(message) {
         var updated = this.state.messages;
-        updated.unshift(message);
+        updated.push(message);
         this.setState({messages: updated});
     },
 
