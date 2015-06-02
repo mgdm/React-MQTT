@@ -11,7 +11,7 @@ client.on('connect', function() {
 var Message = React.createClass({
     render: function() {
         return (
-            <div key={this.props.key} className="message">{this.props.message.payload}</div>
+            <div key={this.props.key} className="message row">{this.props.message.payload}</div>
         );
     }
 });
@@ -48,7 +48,8 @@ var MessageList = React.createClass({
 
         return (
             <div id="messageList" className="table-block footer-push">
-                <div className="messages">{messageNodes}</div>
+                <h1>Channel Name</h1>
+                <div className="messages container">{messageNodes}</div>
             </div>
         );
     }
@@ -82,7 +83,6 @@ var App = React.createClass({
     render: function() {
         return (
             <div className="table-container">
-                <div className="row"><h1>Channel name</h1></div>
                 <MessageList />
                 <SendMessage />
             </div>
