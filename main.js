@@ -47,7 +47,9 @@ var MessageList = React.createClass({
         });
 
         return (
-            <div className="messages">{messageNodes}</div>
+            <div id="messageList" className="table-block footer-push">
+                <div className="messages">{messageNodes}</div>
+            </div>
         );
     }
 });
@@ -56,9 +58,15 @@ var SendMessage = React.createClass({
 
     render: function() {
         return (
-            <form onSubmit={this.send}>
-                <input type="text" name="sendMessage" />
-            </form>
+            <div className="table-block">
+                <div className="container">
+                    <footer id="footer" className="twelve columns">
+                        <form onSubmit={this.send}>
+                            <input type="text" name="sendMessage" className="u-full-width" placeholder="Say hello" />
+                        </form>
+                    </footer>
+                </div>
+            </div>
         );
     },
 
@@ -73,18 +81,15 @@ var SendMessage = React.createClass({
 var App = React.createClass({
     render: function() {
         return (
-            <div>
-                <div>
-                    <SendMessage />
-                </div>
-                <div>
-                    <MessageList />
-                </div>
+            <div className="table-container">
+                <div className="row"><h1>Channel name</h1></div>
+                <MessageList />
+                <SendMessage />
             </div>
         );
     }
 });
 
 React.render(
-    <App />, document.getElementById('content')
+    <App />, document.getElementById('body')
 );
