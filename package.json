@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "build": "./node_modules/.bin/browserify -t babelify main.js -o output.js",
+    "build": "./node_modules/.bin/browserify -t babelify -p [ minifyify --no-map ] main.js -o output.js",
     "watch": "./node_modules/.bin/watchify -d -t babelify main.js -o output.js"
   },
   "author": "",
@@ -12,11 +12,12 @@
   "devDependencies": {
     "babel": "^5.4.7",
     "babelify": "^6.1.2",
-    "browserify": "^10.2.3"
+    "browserify": "^10.2.3",
+    "minifyify": "~7.0.0",
+    "watchify": "^3.2.1"
   },
   "dependencies": {
     "mqtt": "^1.2.0",
-    "react": "^0.13.3",
-    "watchify": "^3.2.1"
+    "react": "^0.13.3"
   }
 }
