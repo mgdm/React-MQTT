@@ -1,6 +1,8 @@
 var mqtt = require('mqtt');
 var React = require('react');
-var client = mqtt.connect("ws://localhost:1884");
+
+var host = 'ws://' + window.location.host + ':1884';
+var client = mqtt.connect(host);
 
 client.on('connect', function() {
     client.subscribe("haw");
