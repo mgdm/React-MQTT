@@ -25,3 +25,6 @@ html, body {
     border-bottom: 1px solid #ccc;
 }
 
+.message:last-child {
+    border-bottom: none;
+}

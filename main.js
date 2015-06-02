@@ -11,7 +11,7 @@ client.on('connect', function() {
 var Message = React.createClass({
     render: function() {
         return (
-            <div key={this.props.key} className="message row">{this.props.message.payload}</div>
+            <div key={this.props.key} className="message">{this.props.message.payload}</div>
         );
     }
 });
@@ -49,7 +49,7 @@ var MessageList = React.createClass({
         return (
             <div id="messageList" className="table-block footer-push">
                 <h1>Channel Name</h1>
-                <div className="messages container">{messageNodes}</div>
+                <div className="messages">{messageNodes}</div>
             </div>
         );
     }
@@ -63,7 +63,7 @@ var SendMessage = React.createClass({
                 <div className="container">
                     <footer id="footer" className="twelve columns">
                         <form onSubmit={this.send}>
-                            <input type="text" name="sendMessage" className="u-full-width" placeholder="Say hello" />
+                            <input type="text" name="sendMessage" className="u-full-width" placeholder="Say hello" autoFocus />
                         </form>
                     </footer>
                 </div>
